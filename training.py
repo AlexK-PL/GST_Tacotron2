@@ -21,7 +21,7 @@ from numpy import finfo
 
 from Tacotron2 import tacotron_2
 from fp16_optimizer import FP16_Optimizer
-from distributed import apply_gradient_allreduce
+# from distributed import apply_gradient_allreduce
 from loss_function import Tacotron2Loss
 from logger import Tacotron2Logger
 
@@ -106,8 +106,8 @@ def load_model(hyper_params):
         model = batchnorm_to_float(model.half())
         model.decoder.attention_layer.score_mask_value = float(finfo('float16').min)
 
-    if hyper_params['distributed_run']:
-        model = apply_gradient_allreduce(model)
+    # if hyper_params['distributed_run']:
+    #     model = apply_gradient_allreduce(model)
 
     return model
 
