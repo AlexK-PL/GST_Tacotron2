@@ -101,7 +101,8 @@ def init_distributed(hyper_params, n_gpus, rank, group_name):
 
 def load_model(hyper_params):
     # according to the documentation, it is recommended to move a model to GPU before constructing the optimizer
-    model = tacotron_2(hyper_params).cuda()
+    # model = tacotron_2(hyper_params).cuda()
+    model = tacotron_2(hyper_params)
     if hyper_params['fp16_run']:  # converts everything into half type (16 bits)
         model = batchnorm_to_float(model.half())
         model.decoder.attention_layer.score_mask_value = float(finfo('float16').min)
