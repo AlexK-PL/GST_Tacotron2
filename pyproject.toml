@@ -1,0 +1,10 @@
+[project]
+name = "Tacotron2_GST_SingleHead_eng"
+authors = [
+  { name = "Alex Peiro-Lilja", email = "alex.peiro.lilja@ub.edu" },
+]
+description = "Trained Tacotron2-based model with 3 Global Style Tokens (GST) and one single head attention"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent",]
+
